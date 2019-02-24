@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Disciplina
+RewriteRule ^([a-z-]{5,})\/?$ ?disciplina=$1 [NC]
+
+# Matéria
+RewriteRule ^([a-z-]{5,})\/([a-z-]{5,})\/?$ ?disciplina=$1&materia=$2 [NC]
+
+# Assunto
+RewriteRule ^([a-z-]{5,})\/([a-z-]{5,})\/([a-z-]{5,})\/?$ ?disciplina=$1&materia=$2&assunto=$3 [NC]
+
+ErrorDocument 404 /404.php
