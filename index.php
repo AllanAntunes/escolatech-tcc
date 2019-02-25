@@ -14,7 +14,7 @@
     <title>EscolaEnem</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
         <div class="container">
             <button class="navbar-toggler border-0 mr-auto" type="button" data-toggle="collapse" data-target="#menu">
                 <i class="fas fa-bars"></i>
@@ -56,7 +56,7 @@
             </div>
             <div class="collapse navbar-collapse mr-auto" id="pesquisar">
                 <form class="form-inline mx-auto">
-                    <input type="text" id="input-pesquisar" class="form-control menu-input-pesquisa" placeholder="Estude um assunto...">
+                    <input type="text" id="input-pesquisar" class="form-control menu-input-pesquisa bg-light" placeholder="Estude um assunto...">
                     <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -104,7 +104,7 @@
                     echo '
             <div class="col-sm-6 col-md-4 col-lg-3 text-center">
                 <a href="/' . $linhaSQL['slug'] . '/">
-                    <div class="bg-' . $linhaSQL['slug'] . ' text-white shadow-sm p-4 mb-3 rounded">
+                    <div class="bg-gradient-' . $linhaSQL['slug'] . ' text-white shadow-sm p-4 mb-3 rounded">
                         <i class="' . $linhaSQL['icone'] . ' fa-3x pb-3"></i>
                         <h5 class="m-0">' . $linhaSQL['nome'] . '</h5>
                     </div>
