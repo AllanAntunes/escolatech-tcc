@@ -85,8 +85,8 @@
     } else{ ?>
     <div class="jumbotron jumbotron-fluid text-white shadow-sm mb-4 jumbotron-principal-fundo">
         <div class="container">
-            <h2>O EscolaEnem é completamente gratuito para você!</h2>
-            <p class="lead mb-5">Cadastre-se para ter um plano de estudos!</p>
+            <h2>O EscolaEnem descomplica a sua vida de estudante!</h2>
+            <p class="lead mb-5">Comece grátis</p>
             <button type="button" class="btn btn-light mr-2" data-toggle="modal" data-target="#cadastre-se"><b>Cadastre-se agora</b></button>
             ou
             <a href="#input-pesquisar" class="btn btn-light ml-2">Estude um assunto<i class="fas fa-search ml-2"></i></a>
@@ -102,7 +102,7 @@
                 $SQL = mysqli_query($conexao, 'SELECT * FROM disciplina WHERE posicao = ' . $i);
                 $linhaSQL = mysqli_fetch_assoc($SQL);
                     echo '
-            <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+            <div class="col-sm-6 col-md-3 text-center">
                 <a href="/' . $linhaSQL['slug'] . '/">
                     <div class="bg-gradient-' . $linhaSQL['slug'] . ' text-white shadow-sm p-4 mb-3 rounded">
                         <i class="' . $linhaSQL['icone'] . ' fa-3x pb-3"></i>
