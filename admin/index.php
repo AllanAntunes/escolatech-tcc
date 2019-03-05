@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/solid.min.css">
     <link rel="stylesheet" href="/css/brands.min.css">
     <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <link rel="stylesheet" href="/css/summernote-bs4.css">
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/css/fontawesome-iconpicker.min.css">
@@ -24,8 +25,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <a href="/admin/" class="navbar-brand mr-auto mr-md-3 text-light">
-                    <i class="fas fa-book"></i>
-                    <b>Escola</b>Enem
+                    <i class="fas fa-book mr-1"></i><b>Escola</b>Enem
                 </a>
                 <button class="navbar-toggler border-0 ml-2" type="button" data-toggle="collapse" data-target="#area-de-logon">
                     <i class="fas fa-user-circle"></i>

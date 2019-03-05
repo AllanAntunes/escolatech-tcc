@@ -1,0 +1,20 @@
+        <div class="row">
+            <?php
+            $posicao = mysqli_query($conexao, 'SELECT posicao FROM disciplina');
+            $i = 0;
+            while($linha = mysqli_fetch_assoc($posicao)){
+                $i++;
+                $SQL = mysqli_query($conexao, 'SELECT * FROM disciplina WHERE posicao = ' . $i);
+                $linhaSQL = mysqli_fetch_assoc($SQL);
+                    echo '
+            <div class="col-sm-6 col-md-4 col-lg-3 text-center">
+                <a href="/' . $linhaSQL['slug'] . '/">
+                    <div class="bg-gradient-' . $linhaSQL['slug'] . ' text-white shadow-sm p-4 mb-3 rounded">
+                        <i class="' . $linhaSQL['icone'] . ' fa-3x pb-3"></i>
+                        <h5 class="m-0">' . $linhaSQL['nome'] . '</h5>
+                    </div>
+                </a>
+            </div>';
+            }
+            ?>
+        </div>

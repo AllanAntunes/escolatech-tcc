@@ -1,0 +1,48 @@
+            <button class="navbar-toggler border-0 mr-auto" type="button" data-toggle="collapse" data-target="#menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="navbar-brand mr-md-3 text-primary">
+                <i class="fas fa-book"></i>
+                <b>Escola</b>Enem
+            </a>
+            <button class="navbar-toggler border-0 ml-auto" type="button" data-toggle="collapse" data-target="#pesquisar">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="navbar-toggler border-0 ml-2" type="button" data-toggle="collapse" data-target="#area-de-logon">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="collapse navbar-collapse mr-auto" id="menu">
+            <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" role="button" data-toggle="dropdown"><i class="fas fa-bars mr-2"></i>Disciplinas</a>
+                        <div class="dropdown-menu">
+                            <a href="/matematica" class="dropdown-item">Matemática</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/quimica" class="dropdown-item">Química</a>
+                            <a href="/fisica" class="dropdown-item">Física</a>
+                            <a href="/biologia" class="dropdown-item">Biologia</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/portugues" class="dropdown-item">Português</a>
+                            <a href="/literatura" class="dropdown-item">Literatura</a>
+                            <a href="/espanhol" class="dropdown-item">Espanhol</a>
+                            <a href="/ingles" class="dropdown-item">Inglês</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/historia" class="dropdown-item">História</a>
+                            <a href="/geografia" class="dropdown-item">Geografia</a>
+                            <a href="/atualidades" class="dropdown-item">Atualidades</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="/redacao" class="dropdown-item">Redação</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse mr-auto" id="pesquisar">
+                <form class="form-inline mx-auto">
+                    <input type="text" id="input-pesquisar" class="form-control menu-input-pesquisa bg-light" placeholder="Estude um assunto...">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="collapse navbar-collapse" id="area-de-logon">
+                <button type="button" class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#login">Login</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastre-se">Cadastre-se</button>
+            </div>
