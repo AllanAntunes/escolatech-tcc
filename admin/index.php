@@ -59,9 +59,9 @@
     <?php
     if(isset($_GET['slug'])){
         if(file_exists($_GET['slug'] . '.php')){
-            include($_GET['slug'] . '.php');
+            include $_GET['slug'] . '.php';
         } else{
-            include('../404.php');
+            include '../404.php';
         }
     } else{ ?>
     <?php } ?>

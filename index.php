@@ -23,13 +23,13 @@
             $linha = mysqli_fetch_assoc($SQL);
             echo $linha['conteudo'];
         } else{
-            include('404.php');
+            include '404.php';
         }
     } elseif(isset($_GET['disciplina'])){
         $disciplina = $_GET['disciplina'];
         $SQL = mysqli_query($conexao, "SELECT nome FROM disciplina WHERE nome = '$disciplina'");
         if(mysqli_num_rows($SQL) >= 1){
-            include('paginacao.php');
+            include 'paginacao.php';
         }
     } else{ ?>
     <div class="home-principal">

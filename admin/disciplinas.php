@@ -29,7 +29,6 @@
                     mysqli_query($conexao, "DELETE FROM disciplina WHERE id = $id");
                 }
             }
-
             $SQL = mysqli_query($conexao, 'SELECT * FROM disciplina ORDER BY posicao ASC');
             while($linha = mysqli_fetch_assoc($SQL)){
                     echo '

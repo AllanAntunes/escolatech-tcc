@@ -3,7 +3,7 @@ header("Content-Type: text/plain");
 
 $idDisciplina = $_GET['idDisciplina'];
 
-include('configuracoes.php');
+include 'configuracoes.php';
 
 $stringMaterias = '<option disabled value selected>Selecione a matéria</option>';
 
