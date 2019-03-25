@@ -1,8 +1,7 @@
 <?php
-
 $servidor = 'localhost';
 $usuario = 'root';
-$senha = null;
+$senha = NULL;
 $banco = 'escolaenem';
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);

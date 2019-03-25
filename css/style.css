@@ -21,3 +21,9 @@
 .home-principal {
     background: linear-gradient(45deg, rgb(255,216,0) 0%, rgb(255,132,0) 75%);
 }
+.breadcrumb {
+    background-color: unset;
+    border-radius: unset;
+    padding: unset;
+    margin-bottom: unset;
+}

@@ -13,9 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <link rel="stylesheet" href="/css/summernote-bs4.css">
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/fontawesome-iconpicker.min.css">
     <?php include('configuracoes.php'); ?>
     <title>EscolaEnem</title>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/summernote-bs4.min.js"></script>
+    <script src="/js/summernote-pt-BR.js"></script>
+    <script src="/js/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
     <div class="sticky-top">
@@ -55,7 +61,7 @@
                 </div>
             </div>
         </nav>
-    <?php if(isset($_GET['slug']) && $_GET['slug'] != 'editar' && $_GET['slug'] != 'paginas' && $_GET['slug'] != 'midia' && $_GET['slug'] != 'usuarios'){echo "</div>";} ?>
+    <?php if(isset($_GET['slug']) && $_GET['slug'] != 'conteudo' && $_GET['slug'] != 'disciplinas' && $_GET['slug'] != 'materias' && $_GET['slug'] != 'editar' && $_GET['slug'] != 'midia' && $_GET['slug'] != 'usuarios'){echo "</div>";} ?>
     <?php
     if(isset($_GET['slug'])){
         if(file_exists($_GET['slug'] . '.php')){
@@ -65,55 +71,5 @@
         }
     } else{ ?>
     <?php } ?>
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/summernote-bs4.min.js"></script>
-    <script src="/js/summernote-pt-BR.js"></script>
-    <script src="/js/jquery.dataTables.min.js"></script>
-    <script src="/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/js/fontawesome-iconpicker.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#conteudo').summernote({
-                lang: 'pt-BR',
-                height: 500
-            });
-            $('#disciplinas').DataTable({
-                "language": {
-                    "decimal":        "",
-                    "emptyTable":     "Nenhum dado disponível na tabela",
-                    "info":           "Mostrando de _START_ a _END_ de _TOTAL_ linhas",
-                    "infoEmpty":      "Mostrando de 0 a 0 de 0 linhas",
-                    "infoFiltered":   "(filtrado de _MAX_ total de linhas)",
-                    "infoPostFix":    "",
-                    "thousands":      ",",
-                    "lengthMenu":     "Mostrar _MENU_ linhas",
-                    "loadingRecords": "Carregando...",
-                    "processing":     "Processando...",
-                    "search":         "Pesquisar:",
-                    "zeroRecords":    "Nenhum registro correspondente encontrado",
-                    "paginate": {
-                        "first":      "Primeira",
-                        "last":       "Última",
-                        "next":       "Próxima",
-                        "previous":   "Anterior"
-                    },
-                    "aria": {
-                        "sortAscending":  ": ativar para classificar por coluna ascendente",
-                        "sortDescending": ": ativar para classificar por coluna descendente"
-                    }
-                }
-            });
-            $('#disciplina').change(function(){
-                var disciplina = $('#disciplina').val();
-                $.get('pesquisaMateria.php?idDisciplina=' + disciplina, function(resultado){
-                    $('#materia').find('option').remove();
-                    $('#materia').append(resultado);
-                });
-            });
-            $('#icone').iconpicker();
-        });
-    </script>
 </body>
 </html>

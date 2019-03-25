@@ -1,7 +1,6 @@
         <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm">
             <div class="container">
-                <strong class="mr-auto">Editar novo assunto
-                </strong>
+                <strong class="mr-auto">Editar novo assunto</strong>
                 <button type="submit" class="btn btn-primary ml-5" form="editor">Publicar</button>
             </div>
         </nav>
@@ -11,7 +10,7 @@
             <div class="col-md-12">
                 <form id="editor" action="/admin/?slug=editar" method="POST">
                     <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="disciplina">Disciplina:</label>
                             <select name="disciplina" id="disciplina" class="form-control" required>
                                 <option disabled value selected>Selecione a disciplina</option>
@@ -24,7 +23,7 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-4">
                             <label for="materia">Matéria:</label>
                             <select name="materia" id="materia" class="form-control" required>
                                 <option disabled value selected>Selecione a matéria</option>
@@ -87,3 +86,18 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('#conteudo').summernote({
+                lang: 'pt-BR',
+                height: 500
+            });
+        });
+        $('#disciplina').change(function(){
+            var disciplina = $('#disciplina').val();
+            $.get('pesquisaMateria.php?idDisciplina=' + disciplina, function(resultado){
+                $('#materia').find('option').remove();
+                $('#materia').append(resultado);
+            });
+        });
+    </script>

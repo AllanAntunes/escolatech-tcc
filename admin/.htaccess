@@ -5,4 +5,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Admin
 RewriteRule ^([a-z-]{5,})\/?$ ?slug=$1 [NC]
 
+# Disciplina
+RewriteRule ^([a-z-]{5,})\/?([a-z0-9-]{5,})\/?$ ?slug=$1&disciplina=$2 [NC]
+
+# Matéria
+RewriteRule ^([a-z-]{5,})\/?([a-z0-9-]{5,})\/?([a-z0-9-]{5,})\/?$ ?slug=$1&disciplina=$2&materia=$3 [NC]
+
 ErrorDocument 404 /404.php
