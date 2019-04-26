@@ -34,7 +34,7 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #0084b4 !default;
+$blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -44,19 +44,6 @@ $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
-
-$matematica: #0067a5 !default;
-$quimica: #0d98ba !default;
-$fisica: #177245 !default;
-$biologia: #009966 !default;
-$portugues: #002776 !default;
-$literatura: #0d5599 !default;
-$redacao: #1164b4 !default;
-$atualidades: #ff8c00 !default;
-$historia: #59260b !default;
-$geografia: #e86100 !default;
-$ingles: #3c3b6e !default;
-$espanhol: #fabd00 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -74,20 +61,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800,
-    "black":      $black,
-    "matematica": $matematica,
-    "quimica":    $quimica,
-    "fisica":     $fisica,
-    "biologia":   $biologia,
-    "portugues":  $portugues,
-    "literatura": $literatura,
-    "redacao":    $redacao,
-    "atualidades":$atualidades,
-    "historia":   $historia,
-    "geografia":  $geografia,
-    "ingles":     $ingles,
-    "espanhol":   $espanhol
+    "gray-dark":  $gray-800
   ),
   $colors
 );
@@ -101,22 +75,6 @@ $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
-$white:         $white !default;
-$black:         $black !default;
-
-$matematica:    $matematica !default;
-$quimica:       $quimica !default;
-$fisica:        $fisica !default;
-$biologia:      $biologia !default;
-$portugues:     $portugues !default;
-$literatura:    $literatura !default;
-$redacao:       $redacao !default;
-$atualidades:   $atualidades !default;
-$historia:      $historia !default;
-$geografia:     $geografia !default;
-$ingles:        $ingles !default;
-$espanhol:      $espanhol !default;
-
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
@@ -129,20 +87,7 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
-    "white":      $white,
-    "black":      $black,
-    "matematica": $matematica,
-    "quimica":    $quimica,
-    "fisica":     $fisica,
-    "biologia":   $biologia,
-    "portugues":  $portugues,
-    "literatura": $literatura,
-    "redacao":    $redacao,
-    "atualidades":$atualidades,
-    "historia":   $historia,
-    "geografia":  $geografia,
-    "ingles":     $ingles,
-    "espanhol":   $espanhol
+    "white":      $white
   ),
   $theme-colors
 );
@@ -164,8 +109,8 @@ $yiq-text-light:            $white !default;
 
 $enable-caret:                                true !default;
 $enable-rounded:                              true !default;
-$enable-shadows:                              false !default;
-$enable-gradients:                            true !default;
+$enable-shadows:                              true !default;
+$enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
 $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
@@ -294,7 +239,7 @@ $border-radius-sm:            .2rem !default;
 
 $rounded-pill:                50rem !default;
 
-$box-shadow-sm:               0 .25rem .5rem rgba($black, .075) !default;
+$box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 

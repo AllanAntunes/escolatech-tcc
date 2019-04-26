@@ -1,10 +1,5 @@
 <?php
-$servidor = 'localhost';
-$usuario = 'root';
-$senha = NULL;
-$banco = 'escolaenem';
-
-$conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
+$conexao = mysqli_connect('localhost', 'root', NULL, 'escolatech');
 
 mysqli_set_charset($conexao, 'utf8');
 ?>
