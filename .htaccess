@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 
-ErrorDocument 404 publico/404.php
+RewriteRule ^([a-z-]{5,})\/?$ ?slug=$1 [NC,L]
+RewriteRule ^([a-z-]{5,})\/([a-z-]{5,})\/?$ ?slug=$1&curso=$2 [NC,L]
+
+ErrorDocument 404 /index.php?slug=404

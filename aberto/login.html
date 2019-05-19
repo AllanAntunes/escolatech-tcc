@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form id="formLogin" action="/aluno/" method="POST">
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <a href="#" class="btn btn-outline-primary">Esqueci a senha</a>
+            </form>
+            <script src="/js/global-jquery-3.4.0.min.js"></script>
+            <script>
+                function enviarForm(idForm) {
+                    $(idForm).submit();
+                }
+                $('#formLogin').submit(function() {
+                    if($('#email').val() == '') {
+                        $('#email').focus();
+                        return false;
+                    } else if($('#senha').val() == '') {
+                        $('#senha').focus();
+                        return false;
+                    } else {
+                        $.post('https://escolatech.net/php/global-login.php',
+                        {
+                            email: $('#email').val(),
+                            senha: $('#senha').val()
+                        },
+                        function(retorno) {
+                            setTimeout(function() {
+                            if(retorno == 1) {
+                                enviarForm('#formLogin');
+                            } else {
+                                alert('Não confere.');
+                            }
+                        }, 1000);
+                        });
+                        return false;
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</div>
