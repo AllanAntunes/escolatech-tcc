@@ -1,17 +1,26 @@
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            <form id="formLogin" action="/aluno/" method="POST">
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail">
+        <div class="col-md-4 area-login shadow">
+            <div class="text-primary text-center" style="font-size: 28px;">
+                <a href="/"><i class="fas fa-terminal mr-1"></i><b>Escola</b>Tech</a>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show mt-4">
+                <strong>As informações não conferem.</strong>
+            </div>
+            <form id="formLogin" class="form-login" method="POST">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control bg-light" id="email" name="email" placeholder="E-mail" required>
+                    <div class="invalid-feedback" id="invalid-feedback-email" style="display: none;">
+                        Preencha corretamente este campo.
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a senha">
+                <div class="input-group mb-4">
+                    <input type="password" class="form-control bg-light" id="senha" name="senha" placeholder="Senha" required>
+                    <div class="invalid-feedback" id="invalid-feedback-senha" style="display: none;">
+                        Preencha corretamente este campo.
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-                <a href="#" class="btn btn-outline-primary">Esqueci a senha</a>
+                <button type="submit" class="btn btn-secondary btn-block">Entrar</button>
             </form>
             <script src="/global/assets/js/jquery-3.4.0.min.js"></script>
             <script>
@@ -19,11 +28,25 @@
                     $(idForm).submit();
                 }
                 $('#formLogin').submit(function() {
-                    if($('#email').val() == '') {
+                    $('.alert').hide();
+                    if($('#email').hasClass('is-invalid')) {
+                        $('#email').removeClass('is-invalid');
+                        $('#invalid-feedback-email').hide();
+                    }
+                    if($('#senha').hasClass('is-invalid')) {
+                        $('#senha').removeClass('is-invalid');
+                        $('#invalid-feedback-senha').hide();
+                    }
+                    var patternEmail = /^[A-z0-9._-]{1,}@[A-z0-9.-]{1,}\.[A-z0-9.-]{2,}$/;
+                    if(patternEmail.test($('#email').val()) == false) {
                         $('#email').focus();
+                        $('#email').addClass('is-invalid');
+                        $('#invalid-feedback-email').show();
                         return false;
-                    } else if($('#senha').val() == '') {
+                    } else if($('#senha').val() == '' || $('#senha').val().length <= 7) {
                         $('#senha').focus();
+                        $('#senha').addClass('is-invalid');
+                        $('#invalid-feedback-senha').show();
                         return false;
                     } else {
                         $.post('https://escolatech.net/global/include/login.php',
@@ -33,10 +56,18 @@
                         },
                         function(retorno) {
                             setTimeout(function() {
-                            if(retorno == 1) {
+                            retorno = JSON.parse(retorno);
+                            if(retorno.confere == true) {
+                                switch(retorno.tipo) {
+                                    case 1:
+                                        $('#formLogin').attr('action', '/aluno/');
+                                        break;
+                                    default:
+                                        $('#formLogin').attr('action', '/admin/');
+                                }
                                 enviarForm('#formLogin');
                             } else {
-                                alert('Não confere.');
+                                $('.alert').show();
                             }
                         }, 1000);
                         });
@@ -44,6 +75,11 @@
                     }
                 });
             </script>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 abaixo-da-area-login shadow">
+            Ainda não é nosso aluno? <a href="/planos/" style="font-weight: bold;">Matricule-se!</a>
         </div>
     </div>
 </div>

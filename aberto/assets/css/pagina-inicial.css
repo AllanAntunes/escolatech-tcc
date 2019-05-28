@@ -2,7 +2,7 @@
     margin-bottom: unset !important;
 }
 .principal {
-    background: linear-gradient(157.5deg, rgba(17,102,221,0.85) 20%, rgba(0,34,136,0.95) 80%);
+    background: linear-gradient(135deg, rgba(17,102,221,0.85) 20%, rgba(0,34,136,0.95) 80%);
 }
 .principal .navbar {
     padding: 10px 16px;

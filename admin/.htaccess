@@ -1,7 +1,5 @@
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} !^/(admin|admin/.*)$
-RewriteCond %{REQUEST_URI} !^/(aluno|aluno/.*)$
 RewriteRule ^([a-z-]{5,})\/?$ ?slug=$1 [NC,L]
 RewriteRule ^([a-z-]{5,})\/([a-z-]{5,})\/?$ ?slug=$1&curso=$2 [NC,L]
 

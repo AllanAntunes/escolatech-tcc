@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(135deg, rgba(55,114,196,0.5) 0%, rgba(55,114,196,0.5) 100%), url('../midia/plano-de-fundo-login.jpg');
+    background-attachment: fixed;
+}
+.area-login {
+    background-color: white;
+    padding: 35px;
+}
+.abaixo-da-area-login {
+    background-color: #EEEEEE;
+    padding: 35px;
+}
+.form-login {
+    margin-top: 25px;
+}
+.alert {
+    display: none;
+}
+.form-login input {
+    height: 44px;
+}
