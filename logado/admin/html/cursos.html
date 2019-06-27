@@ -1,0 +1,75 @@
+			<div class="content">
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="page-header">
+							<h4 class="page-title text-white">Cursos</h4>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner">
+					<div class="row" id="cursos">
+						<script>
+							function enviarForm(idForm) {
+								document.getElementById(idForm).submit();
+							}
+						</script>
+						<div class="col-sm-6 col-md-4 col-lg-3">
+							<a href="#" data-toggle="modal" data-target="#modalAdicionarCurso">
+								<div class="card text-primary text-center" style="height: 184px; border: 1px solid #1572e8; border-radius: unset; margin-bottom: unset;">
+									<div class="card-body" style="height: 127px;">
+										<div class="mb-2" style="margin-top: 40px;"><i class="fas fa-plus fa-2x"></i></div>
+										<span style="font-size: 18px;">Adicionar curso</span>
+									</div>
+								</div>
+							</a>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modalAdicionarCurso" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Adicionar curso</h5>
+							<button type="button" class="close" data-dismiss="modal">
+								<span>&times;</span>
+							</button>
+						</div>
+						<div class="modal-body bg-light">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12">
+										<form id="formAdicionarCurso" action="" method="POST">
+											<div class="form-row">
+												<div class="form-group col-md-12">
+													<label for="tituloCurso">Título</label>
+													<input type="text" class="form-control" id="tituloCurso" name="tituloCurso">
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-md-3">
+													<label for="posicaoCurso">Posição</label>
+													<input type="text" class="form-control" id="posicaoCurso" name="posicaoCurso">
+												</div>
+												<div class="form-group col-md-9">
+													<label for="corCurso">Cor</label>
+													<input type="color" class="form-control" id="corCurso" name="corCurso">
+												</div>
+											</div>
+											<div class="form-row">
+												<div class="form-group col-md-12">
+													<label for="imagemURLCurso">URL da imagem</label>
+													<input type="text" class="form-control" id="imagemURLCurso" name="imagemURLCurso">
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" form="formAdicionarCurso"><i class="fas fa-send mr-2"></i>Enviar</button>
+						</div>
+					</div>
+				</div>
+			</div>

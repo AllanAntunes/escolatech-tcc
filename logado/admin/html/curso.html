@@ -1,0 +1,59 @@
+			<div class="content">
+				<div class="panel-header bg-primary-gradient mb-4">
+					<div class="page-inner py-5">
+						<a href="/admin/" class="text-light"><i class="fas fa-angle-left mr-2 mb-3"></i>Voltar</a>
+						<div class="page-header">
+							<h4 class="page-title text-white"></h4>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner" id="teste">
+					<div class="row mb-3">
+						<div class="col-md-12">
+							<a href="#" data-toggle="modal" data-target="#modalAdicionarCapitulo">
+								<div class="card text-primary text-center" style="border: 1px solid #1572e8; border-radius: unset;">
+									<div class="card-body">
+										<i class="fas fa-plus mr-2"></i><span style="font-size: 18px;">Adicionar capítulo</span>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modalAdicionarCapitulo" tabindex="-1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Adicionar capítulo</h5>
+							<button type="button" class="close" data-dismiss="modal">
+								<span>&times;</span>
+							</button>
+						</div>
+						<div class="modal-body bg-light">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12">
+										<form id="formAdicionarCapitulo" action="" method="POST">
+											<div class="form-row">
+												<div class="form-group col-md-9">
+													<label for="tituloNovoCapitulo">Título</label>
+													<input type="text" class="form-control" id="tituloNovoCapitulo" name="tituloNovoCapitulo" placeholder="Digite o título do capítulo">
+												</div>
+												<div class="form-group col-md-3">
+													<label for="posicaoNovoCapitulo">Posição</label>
+													<input type="text" class="form-control" id="posicaoNovoCapitulo" name="posicaoNovoCapitulo">
+												</div>
+											</div>
+											<input type="text" id="idCurso" name="idCurso" hidden>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary" form="formAdicionarCapitulo"><i class="fas fa-send mr-2"></i>Enviar</button>
+						</div>
+					</div>
+				</div>
+			</div>

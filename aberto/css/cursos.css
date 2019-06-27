@@ -1,0 +1,9 @@
+.card {
+    overflow: hidden;
+}
+.card a {
+    text-decoration: unset;
+}
+h4 {
+    font-size: 1.125rem;
+}

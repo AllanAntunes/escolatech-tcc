@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/global/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/global/assets/css/solid.min.css">
-    <link rel="stylesheet" href="/global/assets/css/brands.min.css">
-    <link rel="stylesheet" href="/global/assets/css/fontawesome.min.css">
     <?php
-	if(isset($_GET['slug']) && file_exists($_GET['slug'] . '.html')) {
-		echo '<link rel="stylesheet" href="/aberto/assets/css/' . $_GET['slug'] . '.css"';
-	}
-	?>
-    <link rel="stylesheet" href="/global/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
-    <title>EscolaTech</title>
-    <?php
-    if(isset($_GET['slug'])) {
-    ?>
-    <link rel="stylesheet" href="/aberto/assets/css/<?php echo $_GET['slug']; ?>.css">
-</head>
-<body>
-    <?php
-        if($_GET['slug'] != 'pagina-inicial' && $_GET['slug'] != 'login') {
+    if($slug != 'pagina-inicial' && $slug != 'login') {
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
@@ -34,33 +9,73 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="/cursos/" class="nav-link"><i class="fas fa-bars mr-2"></i>Cursos</a></li>
             </ul>
+            <?php if($_SESSION) { ?>
+            <div class="dropdown">
+                <button type="button" id="dropdownUsuarioLogado" data-toggle="dropdown">
+                    <strong class="mr-1" style="font-weight: normal;"><?php echo $_SESSION['nomeReduzido']; ?></strong>
+                    <img src="<?php echo $_SESSION['URLFotoPerfil']; ?>" class="shadow-sm" id="fotoPerfil" style="width: 40px; height: 40px; border-radius: 100%;">
+                    <i class="fas fa-caret-down ml-1"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/<?php echo $_GET['diretorio']; ?>/gerenciar-conta/"><i class="fas fa-user-cog mr-2"></i>Gerenciar conta</a>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="dropdown-item text-danger" onclick="deslogar();"><i class="fas fa-sign-out-alt mr-2"></i>Sair</button>
+                </div>
+            </div>
+            <?php } else { ?>
             <a href="/login/" class="btn btn-outline-primary mr-2">Login</a>
             <a href="/planos/" class="btn btn-primary">Matricule-se</a>
+            <?php } ?>
         </div>
     </nav>
     <?php
-        }
-        if(file_exists('aberto/' . $_GET['slug'] . '.html')) {
-            include 'aberto/' . $_GET['slug'] . '.html';
-        } else {
-            include 'global/404.html';
-        }
-    } else {
-    ?>
-    <link rel="stylesheet" href="/aberto/assets/css/pagina-inicial.css">
-</head>
-<body>
-    <?php
-        include 'aberto/pagina-inicial.html';
     }
+    if($slug == 'pagina-inicial') {
     ?>
-    <script src="/global/assets/js/jquery-3.4.0.min.js"></script>
-    <script src="/global/assets/js/popper.min.js"></script>
-    <script src="/global/assets/js/bootstrap.min.js"></script>
+    <div class="principal shadow">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="/" class="navbar-brand text-white">
+                    <i class="fas fa-terminal mr-1"></i><b>Escola</b>Tech
+                </a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="/cursos/" class="nav-link text-white"><i class="fas fa-bars mr-2"></i>Cursos</a></li>
+                </ul>
+                <?php if($_SESSION) { ?>
+                <div class="dropdown">
+                    <button type="button" class="text-white" id="dropdownUsuarioLogado" data-toggle="dropdown">
+                        <strong class="mr-1" style="font-weight: normal;"><?php echo $_SESSION['nomeReduzido']; ?></strong>
+                        <img src="<?php echo $_SESSION['URLFotoPerfil']; ?>" class="shadow-sm" id="fotoPerfil" style="width: 40px; height: 40px; border-radius: 100%;">
+                        <i class="fas fa-caret-down ml-1"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/<?php echo $_GET['diretorio']; ?>/gerenciar-conta/"><i class="fas fa-user-cog mr-2"></i>Gerenciar conta</a>
+                        <div class="dropdown-divider"></div>
+                        <button type="button" class="dropdown-item text-danger" onclick="deslogar();"><i class="fas fa-sign-out-alt mr-2"></i>Sair</button>
+                    </div>
+                </div>
+                <?php } else { ?>
+                <a href="/login/" class="btn btn-outline-white mr-2">Login</a>
+                <a href="/planos/" class="btn btn-white">Matricule-se</a>
+                <?php } ?>
+            </div>
+        </nav>
     <?php
-	if(isset($_GET['slug']) && file_exists($_GET['slug'] . '.html')) {
-		echo '<script src="/aberto/assets/js/' . $_GET['slug'] . '.js"></script>';
-	}
-	?>
-</body>
-</html>
+    }
+    include (file_exists('aberto/html/' . $slug . '.html')) ? 'aberto/html/' . $slug . '.html' : '404.html';
+    if($slug != 'login') {
+    ?>
+        <button type="button" id="botaoToggleChat"><i class="fas fa-comments"></i></button>
+        <div id="chat">
+            <div id="barraSuperiorChat">
+                <img src="/assets/midia/parte-do-logotipo-com-fundo-branco.png">
+                <strong>Assistente virtual</strong>
+            </div>
+            <div id="areaChat"></div>
+            <form class="form-inline" id="formEscreverMensagem" action="" method="GET">
+                <input type="text" class="form-control" id="inputEscreverMensagem" placeholder="Digite a mensagem..." autocomplete="off">
+                <button type="submit" class="btn" id="botaoEnviarInputEscreverMensagem"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    <?php
+    }

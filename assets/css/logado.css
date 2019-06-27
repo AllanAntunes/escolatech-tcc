@@ -1,0 +1,18 @@
+.navbar-brand {
+    margin-bottom: 6.25px;
+}
+.nav-toggle {
+    margin-top: 2px;
+}
+@media screen and (max-width: 991px) {
+    .logo-header .navbar-toggler {
+        position: fixed;
+    }
+    .logo-header .navbar-brand {
+        position: inherit !important;
+        margin-bottom: 10px !important;
+    }
+    .logo-header .dropdown {
+        margin-left: auto;
+    }
+}

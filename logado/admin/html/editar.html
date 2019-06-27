@@ -1,0 +1,56 @@
+			<div class="content">
+				<div class="panel-header bg-primary-gradient mb-4">
+					<div class="page-inner py-5">
+						<a href="/admin/" class="text-light"><i class="fas fa-angle-left mr-2 mb-3"></i>Voltar</a>
+						<div class="page-header">
+							<h4 class="page-title text-white"></h4>
+							<button type="submit" class="btn btn-light ml-auto" id="botaoPublicarTopico" style="display: none;" form="formDeEdicaoDeTopico">Publicar</button>
+							<button type="submit" class="btn btn-light ml-auto" id="botaoPublicarListaDeExercicios" style="display: none;" form="formDeEdicaoDeListaDeExercicios">Publicar</button>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="selecionarTipoDeConteudo" style="display: none;">
+								<button type="button" class="btn btn-primary" id="selecionarTipoTopico">Tópico</button>
+								<button type="button" class="btn btn-info" id="selecionarTipoListaDeExercicios">Lista de exercícios</button>
+							</div>
+							<div id="editarTopico" style="display: none;">
+								<form id="formDeEdicaoDeTopico" action="" method="POST">
+									<div class="form-row">
+										<div class="form-group col-md-7">
+											<label for="tituloTopico">Título</label>
+											<input type="text" class="form-control" id="tituloTopico" name="tituloTopico" placeholder="Digite o título">
+										</div>
+										<div class="form-group col-md-1">
+											<label for="posicaoTopico">Posição</label>
+											<input type="text" class="form-control" id="posicaoTopico" name="posicaoTopico">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="idVideoTopico">Vídeo</label>
+											<input type="text" class="form-control" id="idVideoTopico" name="idVideoTopico" placeholder="Digite o id do vídeo">
+										</div>
+										<div class="form-group col-md-2">
+											<label for="anexoURLTopico">Anexo</label>
+											<input type="text" class="form-control" id="anexoURLTopico" name="anexoURLTopico" placeholder="Digite a URL do anexo">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<textarea id="conteudoTopico" name="conteudoTopico"></textarea>
+										</div>
+									</div>
+									<input type="text" class="form-control" id="tarefaTopico" name="tarefaTopico" hidden>
+								</form>
+							</div>
+							<div id="editarListaDeExercicios" style="display: none;">
+								<form id="formDeEdicaoDeListaDeExercicios" action="" method="POST">
+									Lista de exercícios
+									<input type="text" class="form-control" id="tarefaListaDeExercicios" name="tarefaListaDeExercicios" hidden>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
